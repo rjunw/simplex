@@ -19,7 +19,7 @@ A = np.array([
     [2, 1]
 ])
 b = np.array([6, 3, 5, 4])
-plot.animate(c, A, b, size = 2, reset_framse = True, verbose = True)
+plot.animate(c, A, b, size = 2, reset_frames = True, verbose = True)
 ```
 
 Generates the following output:
@@ -36,6 +36,7 @@ Initial Tableau:
 Current Objective: 0.0
 ```
 Visualized by:
+
 ![init](./images/init1.png)
 
 Iteration 1:
@@ -50,6 +51,7 @@ Tableau 0:
 Current Objective: 8.0
 ```
 Visualized by:
+
 ![init](./images/init2.png)
 
 Iteration 2:
@@ -64,4 +66,5 @@ Tableau 1:
 Current Objective: 9.0
 ```
 Visualized by:
+
 ![init](./images/init3.png)
