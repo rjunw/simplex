@@ -4,6 +4,7 @@ Simplex Algorithm Test Cases
 Author: Ryan Wang
 """
 import simplex 
+import plot
 import numpy as np
 
 if __name__ == "__main__":
@@ -42,3 +43,22 @@ if __name__ == "__main__":
     T = simplex.make_tableau(c, A, b, obj_const=10)
     x, T = simplex.optimize(T, return_tableau = True, verbose = True)
     print(x)
+
+    # plots
+    c = np.array([4, 3])
+    A = np.array([
+        [2, 3],
+        [-3, 2],
+        [0, 2],
+        [2, 1]
+    ])
+    b = np.array([6, 3, 5, 4])
+    plot.animate(c, A, b, size = 2, verbose = True)
+
+    c = np.array([3, 2])
+    A = np.array([
+        [1, 2],
+        [1, -1],
+    ])
+    b = np.array([4, 1])
+    plot.animate(c, A, b, size = 2, verbose = True)

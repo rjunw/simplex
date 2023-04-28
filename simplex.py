@@ -101,17 +101,23 @@ def optimize(T, return_tableau = False, verbose = False):
         
     if verbose:
         print(f"Tableau {i}: \n{T}")
+
     # get isolated non-basic variables
-    mask = np.count_nonzero(T[1:, 1:n+1], axis = 1)
+
+    ### 1. look for non-zero columns with one non-zero value
+    mask = np.count_nonzero(T[1:, 1:n+1], axis = 0) 
     mask = mask == 1
+
+    ### 2. build solution by solving for single variables
     sol = []
     for col_idx in range(mask.shape[0]):
-        if mask[col_idx]:
-            if T[1:, col_idx + 1].sum() == 1:
-                sol.append(x[col_idx])
+        if mask[col_idx]: 
+            piv_index = np.argmax(T[1:, col_idx + 1])
+            sol.append(x[piv_index + 1]/T[piv_index + 1, col_idx + 1])
         else:
             sol.append(0)
 
+    # return vertex/tableau of optimal solution
     if return_tableau:
         return sol, T 
     else:
