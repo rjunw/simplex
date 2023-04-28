@@ -6,7 +6,7 @@ Author: Ryan Wang
 
 import numpy as np 
 
-def make_tableau(c, A, b):
+def make_tableau(c, A, b, obj_const = 0):
     """
     Given canonical c = (c1, ..., cn), and constraints A in mxn, b = (b1, ..., bm):
         maximize     z = c^Tx 
@@ -30,7 +30,7 @@ def make_tableau(c, A, b):
 
     # constraint constant
     T[1:m+1, n + m + 1] = b
-    T[0, n+m+1] = 10
+    T[0, n+m+1] = obj_const
 
     return T
 

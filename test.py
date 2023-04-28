@@ -39,6 +39,6 @@ if __name__ == "__main__":
         [2, 2, 1],
     ])
     b = np.array([4, 10, 16])
-    T = simplex.make_tableau(c, A, b)
+    T = simplex.make_tableau(c, A, b, obj_const=10)
     x, T = simplex.optimize(T, return_tableau = True, verbose = True)
     print(x)
