@@ -17,6 +17,28 @@ if __name__ == "__main__":
     ])
     b = np.array([6, 3, 5, 4])
     T = simplex.make_tableau(c, A, b)
-    x, T = simplex.optimize(T, return_tableau = True)
-    print(T)
+    x, T = simplex.optimize(T, return_tableau = True, verbose = True)
+    print(x)
+
+    # https://jeremykun.com/2014/12/01/linear-programming-and-the-simplex-algorithm/
+    c = np.array([3, 2])
+    A = np.array([
+        [1, 2],
+        [1, -1],
+    ])
+    b = np.array([4, 1])
+    T = simplex.make_tableau(c, A, b)
+    x, T = simplex.optimize(T, return_tableau = True, verbose = True)
+    print(x)
+
+    # https://math.mit.edu/~goemans/18310S15/lpnotes310.pdf
+    c = np.array([20, 16, 12])
+    A = np.array([
+        [1, 0, 0],
+        [2, 1, 1],
+        [2, 2, 1],
+    ])
+    b = np.array([4, 10, 16])
+    T = simplex.make_tableau(c, A, b)
+    x, T = simplex.optimize(T, return_tableau = True, verbose = True)
     print(x)

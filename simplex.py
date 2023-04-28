@@ -30,6 +30,7 @@ def make_tableau(c, A, b):
 
     # constraint constant
     T[1:m+1, n + m + 1] = b
+    T[0, n+m+1] = 10
 
     return T
 
@@ -73,7 +74,7 @@ def is_optimal(T):
     """
     return (T[0, 1:] >= 0).all()
 
-def optimize(T, return_tableau):
+def optimize(T, return_tableau = False, verbose = False):
     """
     Optimize the linear programming problem given by augmented 
     simplex matrix
@@ -90,12 +91,27 @@ def optimize(T, return_tableau):
     x = T[:, n + m + 1] 
 
     # Simplex algorithm
+    i = 0
     while not is_optimal(T): 
+        if verbose:
+            print(f"Tableau {i}: \n{T}")
         T = pivot(T)
         x = T[:, n + m + 1] 
+        i += 1
+        
+    if verbose:
+        print(f"Tableau {i}: \n{T}")
+    # get isolated non-basic variables
+    mask = np.count_nonzero(T[1:, 1:n+1], axis = 1)
+    mask = mask == 1
+    sol = []
+    for col_idx in range(mask.shape[0]):
+        if mask[col_idx]:
+            if T[1:, col_idx + 1].sum() == 1:
+                sol.append(x[col_idx])
+        else:
+            sol.append(0)
 
-    # get non-zero non-basic variables
-    sol = T[1:, 1:n + 1].transpose() @ x[1:] 
     if return_tableau:
         return sol, T 
     else:
