@@ -12,14 +12,7 @@
 
 Suppose we had the following linear program:
 
-\begin{alignat*}{3}
-    &\text{maximize} && z = 4x_1 + 3x_2 \implies z - 4x_1 - 3x_2 &&= 0\\ 
-    &\text{subject to } && \quad\;\;\; 2x_1 + 3x_2 &&\leq 6\\ 
-                       &\quad &&\;\; -3x_1 + 2x_2 &&\leq 3\\ 
-                       &\quad &&\;\; \qquad\qquad 2x_2 && \leq 5\\ 
-                       &\quad &&\;\; \quad\; 2x_1 + x_2 &&\leq 4\\ 
-    &\text{where }      && \quad \;\;\;x_1, x_2 &&\geq 0
-\end{alignat*} 
+![ex1](https://i.imgur.com/G8usi3U.png)
 
 We can solve this via:
 
