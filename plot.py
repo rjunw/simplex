@@ -80,7 +80,7 @@ def animate(c, A, b, obj_const = 0, size=30, detail=100, reset_frames = False, v
     while not simplex.is_optimal(T):
         T = simplex.pivot(T)
         plot_feasible(c, A, b, size, detail)
-        if verbose: print(f"Tableau {i}: \n{T}")
+        if verbose: print(f"Tableau {i + 1}: \n{T}")
         i += 1
         plot_vertex(T)
         if reset_frames: plt.show();time.sleep(1)
