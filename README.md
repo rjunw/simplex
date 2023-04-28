@@ -48,7 +48,7 @@ Visualized by:
 Iteration 1:
 ```
 Maximum Objective: 8.96969696969697
-Tableau 0: 
+Tableau 1: 
 [[ 1.   0.  -1.   0.   0.   0.   2.   8. ]
  [ 0.   0.   2.   1.   0.   0.  -1.   2. ]
  [ 0.   0.   3.5  0.   1.   0.   1.5  9. ]
@@ -63,7 +63,7 @@ Visualized by:
 Iteration 2:
 ```
 Maximum Objective: 8.96969696969697
-Tableau 1: 
+Tableau 2: 
 [[ 1.    0.    0.    0.5   0.    0.    1.5   9.  ]
  [ 0.    0.    1.    0.5   0.    0.   -0.5   1.  ]
  [ 0.    0.    0.   -1.75  1.    0.    3.25  5.5 ]
