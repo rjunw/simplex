@@ -37,7 +37,7 @@ Current Objective: 0.0
 ```
 Visualized by:
 
-![init](./images/init1.png)
+![init](https://i.imgur.com/Nhm8jCD.png)
 
 Iteration 1:
 ```
@@ -52,7 +52,7 @@ Current Objective: 8.0
 ```
 Visualized by:
 
-![init](./images/init2.png)
+![init2](./images/init2.png)
 
 Iteration 2:
 ```
@@ -67,4 +67,4 @@ Current Objective: 9.0
 ```
 Visualized by:
 
-![init](./images/init3.png)
+![init3](./images/init3.png)
